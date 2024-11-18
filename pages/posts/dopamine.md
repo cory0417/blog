@@ -1,5 +1,4 @@
 ---
-type: posts
 title: It's a pattern
 date: 2023-11-14
 ---
