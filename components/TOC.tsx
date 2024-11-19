@@ -49,11 +49,11 @@ const TOC = () => {
   const [headings, setHeadings] = useState<Heading[]>([]);
 
   useEffect(() => {
-    const contentElement = document.querySelector(".post-content"); // Adjust the selector as needed
-    if (!contentElement) return;
+    const postElement = document.querySelector("article");
+    if (!postElement) return;
 
     const headingElements = Array.from(
-      contentElement.querySelectorAll("h1, h2, h3, h4, h5, h6")
+      postElement.querySelectorAll("h1, h2, h3, h4, h5, h6")
     );
 
     const flatHeadings = headingElements
@@ -70,6 +70,7 @@ const TOC = () => {
 
   return (
     <nav className="toc">
+      <h3 className="toc-title">Table of Contents</h3>
       {headings.length > 0 && renderTOCItems(headings)}
     </nav>
   );
