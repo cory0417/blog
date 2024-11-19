@@ -5,7 +5,7 @@ interface StravaEmbedProps {
   id: string;
   style: string;
   mapHash: string;
-  fromEmbed: boolean;
+  caption: string;
 }
 
 const StravaEmbed: React.FC<StravaEmbedProps> = ({
@@ -13,11 +13,11 @@ const StravaEmbed: React.FC<StravaEmbedProps> = ({
   id,
   style,
   mapHash,
-  fromEmbed,
+  caption,
 }) => {
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "https://strava-embeds.com/embed.js";
+    script.src = "/scripts/strava-embed.js"; // Correct local path
     script.async = true;
     document.body.appendChild(script);
 
@@ -27,14 +27,17 @@ const StravaEmbed: React.FC<StravaEmbedProps> = ({
   }, []);
 
   return (
-    <div
-      className="strava-embed-placeholder"
-      data-embed-type={type}
-      data-embed-id={id}
-      data-style={style}
-      data-map-hash={mapHash}
-      data-from-embed={fromEmbed}
-    />
+    <div style={{ textAlign: "center" }}>
+      <div
+        className="strava-embed-placeholder"
+        data-embed-type={type}
+        data-embed-id={id}
+        data-style={style}
+        data-map-hash={mapHash}
+        data-caption={caption}
+      />
+      <p style={{ marginTop: "8px", fontSize: "0.9rem", color: "#DDD" }}>{caption}</p>
+    </div>
   );
 };
 
