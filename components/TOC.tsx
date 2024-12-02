@@ -70,7 +70,7 @@ const TOC = () => {
 
   return (
     <nav className="toc">
-      <h3 className="toc-title">Table of Contents</h3>
+      <h1 className="toc-title">Table of Contents</h1>
       {headings.length > 0 && renderTOCItems(headings)}
     </nav>
   );
