@@ -1,6 +1,9 @@
 ---
 title: It's a pattern
 date: 2023-11-14
+description: A pattern in my quirky habits
+type: post
+tag: random thoughts
 ---
 
 Recently, I've realized that there's an interesting pattern in a subset of _quirky_ things that I do everyday. I think it's easier to spot if I list them:
