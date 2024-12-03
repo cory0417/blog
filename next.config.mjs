@@ -5,4 +5,11 @@ const withNextra = nextra({
   themeConfig: "./theme.config.jsx",
 });
 
-export default withNextra();
+const nextConfig = {
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
+}
+
+export default withNextra(nextConfig);

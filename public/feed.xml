@@ -4,8 +4,25 @@
         <description><![CDATA[Daeyoung Kim]]></description>
         <link>https://kimdaeyoung.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 13 Nov 2023 01:13:53 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 03 Dec 2024 01:24:52 GMT</lastBuildDate>
         <atom:link href="https://kimdaeyoung.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[It's a pattern]]></title>
+            <description><![CDATA[A pattern in my quirky habits]]></description>
+            <link>/posts/dopamine</link>
+            <guid isPermaLink="true">/posts/dopamine</guid>
+            <category><![CDATA[random thoughts]]></category>
+            <pubDate>Tue, 14 Nov 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Cycling around Olin 🚴‍]]></title>
+            <description><![CDATA[Cycling routes around Olin College of Engineering]]></description>
+            <link>/posts/cycling_around_olin</link>
+            <guid isPermaLink="true">/posts/cycling_around_olin</guid>
+            <category><![CDATA[personal project]]></category>
+            <dc:creator><![CDATA[Daeyoung Kim]]></dc:creator>
+            <pubDate>Mon, 18 Nov 2024 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Next.js Pages]]></title>
             <description><![CDATA[Learn more about Next.js pages.]]></description>
@@ -14,15 +31,6 @@
             <category><![CDATA[web development]]></category>
             <dc:creator><![CDATA[You]]></dc:creator>
             <pubDate>Thu, 18 Mar 2021 04:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Markdown Examples]]></title>
-            <description><![CDATA[View examples of all possible Markdown options.]]></description>
-            <link>/posts/markdown</link>
-            <guid isPermaLink="true">/posts/markdown</guid>
-            <category><![CDATA[web development]]></category>
-            <dc:creator><![CDATA[You]]></dc:creator>
-            <pubDate>Fri, 19 Mar 2021 04:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
