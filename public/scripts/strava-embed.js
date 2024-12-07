@@ -15,9 +15,10 @@
     iframe.setAttribute("title", caption);
     iframe.style.cssText = `
       width: 100%;
-      min-width: 250px;
+      min-width: 10%;
       max-width: 100%;
-      height: 650px;
+      height: 100%;
+      aspect-ratio: 1/1;
       display: block;
     `;
 

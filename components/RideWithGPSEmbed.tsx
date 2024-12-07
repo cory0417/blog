@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface RideWithGPSProps {
   type: string;
@@ -7,36 +7,37 @@ interface RideWithGPSProps {
   metricUnits?: boolean;
   sampleGraph?: boolean;
   hideSurface?: boolean;
-  height?: string;
 }
 
 const RideWithGPSEmbed: React.FC<RideWithGPSProps> = ({
-                                                        type,
-                                                        id,
-                                                        caption,
-                                                        metricUnits = true,
-                                                        sampleGraph = true,
-                                                        hideSurface = true,
-                                                        height = "650px",
-                                                      }) => {
+  type,
+  id,
+  caption,
+  metricUnits = true,
+  sampleGraph = true,
+  hideSurface = true,
+}) => {
   const src = `https://ridewithgps.com/embeds?type=${type}&id=${id}&metricUnits=${metricUnits}&sampleGraph=${sampleGraph}&hideSurface=${hideSurface}`;
 
   return (
-    <div style={{textAlign: "center"}}>
+    <div style={{ textAlign: "center" }}>
       <iframe
         src={src}
-        style={{width: "1px", minWidth: "100%", height, border: "none"}}
+        style={{
+          width: "100%",
+          minWidth: "10%",
+          maxWidth: "100%",
+          height: "100%",
+          aspectRatio: "1 / 1",
+          display: "block",
+        }}
         title={caption}
       ></iframe>
-      <p style={{
-        marginTop: "8px",
-        fontSize: "0.9rem",
-        color: "#DDD"
-      }}>{caption}</p>
+      <p style={{marginTop: "2%", fontSize: "1rem", color: "#FFF"}}>
+        {caption}
+      </p>
     </div>
-
-)
-  ;
+  );
 };
 
 export default RideWithGPSEmbed;
