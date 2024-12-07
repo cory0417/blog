@@ -17,7 +17,7 @@ const StravaEmbed: React.FC<StravaEmbedProps> = ({
 }) => {
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "/scripts/strava-embed.js"; // Correct local path
+    script.src = "/scripts/strava-embed.js";
     script.async = true;
     document.body.appendChild(script);
 
@@ -36,7 +36,9 @@ const StravaEmbed: React.FC<StravaEmbedProps> = ({
         data-map-hash={mapHash}
         data-caption={caption}
       />
-      <p style={{ marginTop: "8px", fontSize: "0.9rem", color: "#DDD" }}>{caption}</p>
+      <p style={{ marginTop: "2%", fontSize: "1rem", color: "#FFF" }}>
+        {caption}
+      </p>
     </div>
   );
 };

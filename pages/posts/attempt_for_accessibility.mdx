@@ -1,0 +1,43 @@
+---
+title: Attempt for accessibility
+date: 2024/12/7
+description: Here's a snippet of my attempt to make my personal website more accessible
+type: post
+tag: personal project
+author: Daeyoung Kim
+---
+
+<h1 id="introduction">Introduction</h1>
+
+As part of the course Technology, Accessibility, Design this semester, I've been learning about the importance of making digital contents accessible to everyone, especially for those who might be using screen readers. Although I've read about WCAG guidelines and some of the best practices for web accessibility as part of the class, I wanted to experience what it takes and how it feels to make my personal website more accessible. In this post, I'll share some of the changes that I've made to my website to make it more accessible, and some of the challenges that I've faced along the way.
+
+<h1 id="the-journey">The Journey</h1>
+
+Before I begin, I want to state that I wasn't able to target the entire website due to time constraints but rather focused on a single post. Because the site doesn't have much content and is relatively simple, I thought it would be a good starting point to see how much effort it would take to make a single post accessible. I started off by writing the post ["Cycling around Olin"](https://kimdaeyoung.com/posts/cycling_around_olin) because I was planning to have more than just text content in it, and I had been thinking about it for a while. Brief overview of the post I planned was to have a series of embedded map of cycling routes, descriptions and some tips for cycling around Olin College of Engineering.
+
+The website currently uses [Next.js](https://nextjs.org/) (a React framework), [Nextra blog template](https://nextra.site/docs/blog-theme/start), and MDX file-format for content.
+
+In my post, I wanted to implement the following features to make it more accessible:
+
+1. Table of Contents: give an overview and allow users to jump to specific sections
+2. Descriptive headings: clear and descriptive headings for each section
+3. Alt text for visuals: descriptive alt text for embedded maps
+4. Semantic HTML elements: using semantic HTML elements to structure the content
+
+<h2 id="challenges">Challenges</h2>
+
+I quickly realized that using frameworks and templates that I wasn't familiar with for the website (which was a decision made a year ago thinking that I'll mostly just make static text entries), is the most annoying bit after all. I was able to figure it out after some trial and error and some help from the internet, but it was definitely a challenge to implement and modify structure of the post. The first challenge that I faced was to make sure that the post was structured in a way that would make sense when read by a screen reader. I had to make sure that the headings were in the correct order, and that the content was structured in a way that would make sense when read out loud. This forced me to take extra time to carefully plan out the structure of the post. Next, there wasn't a built-in component that would create the Table of Contents, so I had to try and create one myself. I was able to implement a relatively simple version myself, but it was definitely a challenge to get it to work properly. Using semantic HTML elements were relatively easy to do, but it wasn't a default behavior in rendering when using Markdown syntax for formatting, so I had to manually insert html tags. For example, I had to put `<h1 id="introduction">Introduction</h1>` for the introduction heading.
+
+Lastly, I had to make sure that all the embedded maps had descriptive alt texts. This was by far the most difficult part to do so. The way [Strava](https://www.strava.com/), a popular fitness platform, embeds its maps is by using an iframe element that fetches from their server. Since the content of the iframe cannot be modified, I had to find a way to add alt text to the iframe element. I was able to find a workaround by adding a title attribute to the iframe element, but it was definitely a challenge to get it to work properly. Furthermore, I had no control over the accessibility of the content within the iframe -- the interactive elements and the visuals -- so I just had to make sure that the caption I added to the map was descriptive enough. The same goes for the [RideWithGPS](https://ridewithgps.com/) embedded maps.
+
+<h2 id="testing">Testing</h2>
+
+After implementing the accessibility features, I tested the post using a screen reader to make sure that the content was accessible. I used Apple's VoiceOver feature on my Macbook to test the post, and I was able to navigate through the post using the screen reader. I was able to jump to specific sections using the Table of Contents, and the headings were read out loud in the correct order. The captions for the embedded maps was also read out loud by the screen reader, which was a relief. However, the screen reader would enter the map element and read out all the interactable buttons, which was quite annoying and unhelpful to discern the content.
+
+Additionally, I used the built-in Firefox Accessibility Inspector to check for any accessibility issues in the post. The inspector was able to detect some issues with the embedded maps, but it was mostly due to the content within the iframe element, which was out of my control. The inspector also gave some helpful warnings on basic accessibility issues, such as incorrect heading structures, and missing element id's. I also used [axe DevTools](https://www.deque.com/axe/devtools/) to check for any accessibility issues, and it was able to detect some issues as well. In the end, I was able to fix most of the issues that were detected by the inspector and axe DevTools, but there were some issues that I couldn't fix due to the limitations of the website's framework and embedded maps.
+
+<h1 id="conclusion">Conclusion</h1>
+
+In conclusion, I was somewhat able to make my personal website more accessible by implementing some basic accessibility features to a single post. I learned a lot about the importance of making digital content accessible to everyone, and some of the challenges that come with it. I realized that making a website accessible is not just about following guidelines and best practices, but also about understanding the limitations of the tools and frameworks that you are using since it might not allow certain adaptations. Also, the issue with embedded maps was a good reminder that accessibility efforts cannot be done in isolation -- it requires a collective effort from everyone involved in the process of creating digital content, especially if a third-part content cannot be modified.
+
+Even though this effort took a lot more time than I had anticipated, it was a worthwhile experience to learn about what it takes to make something more accessible. I hope to continue learning more about web accessibility and implementing more features to make my website more accessible in the future.

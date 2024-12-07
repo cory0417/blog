@@ -7,7 +7,6 @@ interface Heading {
   children?: Heading[];
 }
 
-// Function to build a nested hierarchy from flat heading data
 const buildHierarchy = (headings: Heading[]): Heading[] => {
   const root: Heading[] = [];
   const stack: Heading[] = [];
@@ -29,21 +28,18 @@ const buildHierarchy = (headings: Heading[]): Heading[] => {
   return root;
 };
 
-// Recursive function to render nested TOC
-const renderTOCItems = (headings: Heading[]) => {
-  return (
-    <ul className="toc-list">
-      {headings.map((heading) => (
-        <li key={heading.id} className={`toc-item toc-level-${heading.level}`}>
-          <a href={`#${heading.id}`} className="toc-link">
-            {heading.text}
-          </a>
-          {heading.children && renderTOCItems(heading.children)}
-        </li>
-      ))}
-    </ul>
-  );
-};
+const renderTOCItems = (headings: Heading[]) => (
+  <ul className="toc-list">
+    {headings.map((heading) => (
+      <li key={heading.id} className={`toc-item toc-level-${heading.level}`}>
+        <a href={`#${heading.id}`} className="toc-link">
+          {heading.text}
+        </a>
+        {heading.children && renderTOCItems(heading.children)}
+      </li>
+    ))}
+  </ul>
+);
 
 const TOC = () => {
   const [headings, setHeadings] = useState<Heading[]>([]);
@@ -57,11 +53,11 @@ const TOC = () => {
     );
 
     const flatHeadings = headingElements
-      .filter((element) => element.id) // Ensure headings have an ID
+      .filter((element) => element.id && element.textContent)
       .map((element) => ({
         id: element.id,
-        text: element.textContent || "",
-        level: parseInt(element.tagName.substring(1), 10),
+        text: element.textContent || "Untitled",
+        level: parseInt(element.tagName.substring(1), 10) || 1,
       }));
 
     const nestedHeadings = buildHierarchy(flatHeadings);
